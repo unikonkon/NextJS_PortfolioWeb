@@ -1,0 +1,95 @@
+/* From Uiverse.io by Praashoo7 */ 
+/* HOLD THE ASTRONAUT */
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Montserrat;
+    font-weight: bold;
+    z-index: 1;
+    row-gap: 1em;
+  }
+
+
+  .heading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    opacity: 1;
+    box-shadow: 
+        345px 357px #fff, 107px 256px #fff, 977px 305px #fff, 563px 426px #fff, 1318px 254px #fff,
+        478px 107px #fff, 1065px 333px #fff, 914px 128px #fff, 1033px 67px #fff, 1117px 342px #fff,
+        56px 411px #fff, 453px 385px #fff, 812px 157px #fff, 491px 233px #fff, 52px 415px #fff,
+        1297px 51px #fff, 1258px 212px #fff, 1px 304px #fff, 1284px 82px #fff, 1044px 402px #fff,
+        104px 316px #fff, 751px 262px #fff, 916px 358px #fff, 209px 282px #fff, 449px 196px #fff,
+        1418px 252px #fff, 762px 306px #fff, 907px 351px #fff, 663px 192px #fff, 233px 46px #fff,
+        381px 448px #fff, 1254px 437px #fff, 138px 84px #fff, 1332px 378px #fff, 1402px 592px #fff,
+        273px 171px #fff, 883px 33px #fff, 391px 411px #fff, 91px 375px #fff, 184px 214px #fff,
+        1289px 382px #fff, 176px 84px #fff, 742px 7px #fff, 1163px 373px #fff, 93px 52px #fff,
+        1055px 174px #fff, 1131px 412px #fff, 1358px 16px #fff, 645px 232px #fff, 882px 432px #fff,
+        387px 174px #fff, 768px 71px #fff, 1285px 235px #fff, 461px 347px #fff, 523px 136px #fff,
+        357px 172px #fff, 259px 268px #fff, 1226px 181px #fff, 517px 24px #fff, 515px 354px #fff,
+        1025px 141px #fff, 265px 1px #fff, 35px 356px #fff, 85px 111px #fff, 1025px 38px #fff,
+        1095px 187px #fff, 1163px 76px #fff, 256px 408px #fff, 819px 394px #fff, 979px 146px #fff,
+        789px 115px #fff, 726px 72px #fff, 76px 649px #fff, 79px 292px #fff, 153px 624px #fff,
+        253px 316px #fff, 969px 238px #fff, 469px 384px #fff, 189px 107px #fff, 227px 15px #fff,
+        1241px 11px #fff, 356px 572px #fff, 682px 474px #fff, 536px 433px #fff, 1px 406px #fff,
+        1163px 567px #fff, 289px 615px #fff, 86px 482px #fff, 774px 264px #fff, 332px 406px #fff,
+        1066px 476px #fff, 548px 524px #fff, 434px 462px #fff, 709px 527px #fff, 1231px 554px #fff;
+    z-index: -1;
+    transition: 2s ease;
+    animation: 3s glowing-stars linear alternate infinite;
+    animation-delay: 0s;
+}
+
+  
+  .heading::after {
+    content: "";
+    top: -8.5%;
+    left: -8.5%;
+    position: absolute;
+    width: 7.5em;
+    height: 7.5em;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: #f9f9fb;
+    box-shadow: 0px 0px 100px rgba(193, 119, 241, 0.8),
+      0px 0px 100px rgba(135, 42, 211, 0.8), inset #9b40fc 0px 0px 40px -12px;
+    transition: 0.4s ease-in-out;
+    z-index: -1;
+  }
+  .background:hover .heading::after {
+    box-shadow: 0px 0px 200px rgba(193, 119, 241, 1),
+      0px 0px 200px rgba(135, 42, 211, 1), inset #9b40fc 0px 0px 40px -12px;
+  }
+
+  
+  
+  @keyframes glowing-stars {
+    0% {
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 0.8;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  

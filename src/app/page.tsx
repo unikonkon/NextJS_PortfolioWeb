@@ -40,7 +40,7 @@ export default function Home() {
 
   // Split text for animation
   const { chars } = splitText("Hi, I am");
-  const { charsName } = splitText("Test Developer");
+  const { charsName } = splitText("Suthep Jantawee");
   const { charsFullStack } = splitText("Full Stack Developer");
 
   return (
@@ -52,36 +52,42 @@ export default function Home() {
           <div className="w-10 h-10 rounded-md flex items-center justify-center pt-1" style={{ backgroundColor: 'var(--accent-color)' }}>
             <Image src="/person.png" alt="logo" width={32} height={32} />
           </div>
-          <span className="text-xl font-semibold">Developer</span>
+          <span className="text-xl font-semibold">FaradayBanana</span>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-4 items-center">
-
+          <button
+            onClick={() => scrollToSection("home")}
+            className="btn btn-ghost cursor-pointer"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Home
+          </button>
           <button
             onClick={() => scrollToSection("skills")}
-            className="btn btn-soft"
+            className="btn btn-ghost cursor-pointer"
             style={{ color: 'var(--text-primary)' }}
           >
             Skills
           </button>
           <button
             onClick={() => scrollToSection("expertise")}
-            className="btn btn-soft"
+            className="btn btn-ghost cursor-pointer"
             style={{ color: 'var(--text-primary)' }}
           >
             Experience
           </button>
           <button
             onClick={() => scrollToSection("projects")}
-            className="btn btn-soft"
+            className="btn btn-ghost cursor-pointer"
             style={{ color: 'var(--text-primary)' }}
           >
             Projects
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="btn btn-soft"
+            className="btn btn-ghost cursor-pointer"
             style={{ color: 'var(--text-primary)' }}
           >
             Contact
@@ -189,6 +195,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.section
+        id="home"
         className="max-w-7xl mx-auto px-14 py-16 relative"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -232,8 +239,9 @@ export default function Home() {
                 </motion.span>
               ))}
             </h1>
-            <p className="mb-10 max-w-md" style={{ color: 'var(--text-secondary)' }}>
-              I am a full stack developer with a passion for building web applications.
+            <p className="mb-10 max-w-md md:text-lg text-sm  bg-gray-400 rounded-lg p-4 lg:bg-transparent lg:p-0" style={{ color: 'var(--text-secondary)' }}>
+              I’m looking for a similar role as a Front-End Developer, Back-End Developer, or Full Stack Developer.
+              I have 3+ years of experience in web development. I am passionate about developing web applications, continuously learning modern web technologies, and leveraging AI tools to enhance development processes.
             </p>
             <div className="flex gap-6 flex-wrap">
               <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-colors" style={{ backgroundColor: 'var(--accent-color)' }}>
@@ -242,7 +250,7 @@ export default function Home() {
                 </a>
               </button>
               <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-colors" style={{ backgroundColor: 'var(--accent-color)' }}>
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/unikonkon" target="_blank" rel="noopener noreferrer">
                   Github
                 </a>
               </button>
@@ -302,7 +310,7 @@ export default function Home() {
       {/* Skills & Technologies Section */}
       <motion.section
         id="skills"
-        className="pt-24 relative mt-20"
+        className="pt-12 md:pt-24 relative mt-20"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.07 }}
@@ -381,29 +389,82 @@ export default function Home() {
                 } as React.CSSProperties}
               ></span>
 
-              <div>
-                <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                  <strong className="text-2xl md:text-3xl">Language</strong>
-                  <br />
-                  <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>HTML, CSS, JavaScript, TypeScript, Dart, SQL</strong>
-                </p>
+              <div className="md:p-6">
 
-                <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                  <strong className="text-2xl md:text-3xl">Framework & Library</strong>
-                  <br />
-                  <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>ReactJS, NextJS, Flutter, Bootstrap, Tailwindcss, NextUI</strong>
-                </p>
+                <div className="xs:flex-col md:flex text-start">
+                  <div className="xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-xl md:text-2xl lg:text-3xl">Languages</strong>
+                      <br />
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>HTML, CSS, JavaScript, TypeScript, Dart, SQL(Database)</strong>
+                    </p>
+                  </div>
+                  <div className="text-left xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-2xl md:text-3xl">DevOps & CI/CD Tools</strong>
+                      <br />
+                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Git Version Control, Jenkins, Vercel, Docker</strong>
+                    </p>
+                  </div>
+                </div>
 
-                <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                  <strong className="text-2xl md:text-3xl">Tool</strong>
-                  <br />
-                  <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Git Version Control, VSCode, Figma, Slack, Diagrams.net, Confluence Jira Software, Vercel</strong>
-                </p>
+                <div className="xs:flex-col md:flex text-start ">
+                  <div className="xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-2xl md:text-3xl">Frameworks & Libraries</strong>
+                      <br />
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>ReactJS, NextJS, NextUI, Flutter, Express.js, Electron, Jest, Tailwindcss, Ant Design, DaisyUI</strong>
+                    </p>
+                  </div>
+                  <div className="text-left xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-2xl md:text-3xl">Databases & Data Tools</strong>
+                      <br />
+                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>PostgreSQL, Kibana, Firebase, Prisma</strong>
+                    </p>
+                  </div>
+                </div>
+
+
+                <div className="xs:flex-col md:flex text-start">
+                  <div className="xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-2xl md:text-3xl">Testing & API Tools</strong>
+                      <br />
+                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Postman, Jest</strong>
+                    </p>
+                  </div>
+                  <div className="text-left xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-2xl md:text-3xl">Design & Collaboration Tools</strong>
+                      <br />
+                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Figma, Draw.io (Diagrams.net), Slack, Lark, Monday, Discord</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="xs:flex-col md:flex text-start">
+                  <div className="xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-2xl md:text-3xl">AI Tools</strong>
+                      <br />
+                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Cursor, Blackbox.AI, Gemini, Chat GPT</strong>
+                    </p>
+                  </div>
+                  <div className="text-left xs:w-full mb-6">
+                    <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
+                      <strong className="text-2xl md:text-3xl">Soft Skills</strong>
+                      <br />
+                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Creativity, Critical thinking, Responsibility, Problem solving, Communication, Teamwork</strong>
+                    </p>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex h-[200px] justify-center items-center">
+          <div className="w-full flex lg:h-[200px] h-[100px] justify-center items-center">
             <svg aria-hidden="true" className="absolute inset-0 w-full h-full mt-[100px]" fill="none" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
               <ellipse cx="450" cy="280" rx="380" ry="80" stroke="#6b46c1" strokeOpacity="0.3" strokeWidth="1">
               </ellipse>
@@ -429,43 +490,52 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Experience</h2>
           <div className="flex flex-row items-start">
             {/* Timeline */}
-            <div className="hidden md:flex relative flex-col items-center mr-10" style={{ minWidth: 160 }}>
+            <div className="hidden md:flex relative flex-col items-center mr-10" style={{ minWidth: 230 }}>
               {/* Year 1 */}
               <div className="flex flex-col items-center">
                 <div className="w-1 h-20" style={{ backgroundColor: 'var(--border-color)' }}></div>
-                <span className="text-2xl font-medium mt-2 mb-2" style={{ color: 'var(--text-primary)' }}>2020 - 2021</span>
+                <span className="text-2xl font-medium mt-2 mb-2" style={{ color: 'var(--text-primary)' }}>Mar 2022 - Dec 2022</span>
               </div>
               <div className="w-1 h-[200px]" style={{ backgroundColor: 'var(--border-color)' }}></div>
               {/* Year 2 */}
               <div className="flex flex-col items-center">
-                <span className="text-2xl font-medium mt-2 mb-2" style={{ color: 'var(--text-primary)' }}>2022 - Current</span>
+                <span className="text-2xl font-medium mt-2 mb-2" style={{ color: 'var(--text-primary)' }}>Feb 2023 - Present</span>
               </div>
             </div>
             {/* Experience Cards */}
             <div className="flex flex-col gap-24 w-full">
               {/* Card 1 */}
-              <div className="rounded-xl p-6 shadow-md max-w-3xl" style={{
+              <div className="rounded-xl p-6 shadow-md max-w-6xl" style={{
                 backgroundColor: 'var(--card-bg)',
                 color: 'var(--text-primary)',
                 border: `1px solid var(--border-color)`
               }}>
-                <h3 className="text-2xl md:hidden">2020 - 2021</h3>
-                <h3 className="text-2xl font-semibold mb-2 drop-shadow-md" style={{ color: 'var(--accent-color)' }}>Experience1</h3>
-                <p className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Developed and maintained multiple web applications using React, Next.js, and TypeScript</p>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Implemented responsive designs and interactive UI components following best practices</p>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Collaborated with team members using Git version control and agile methodologies</p>
+                <h3 className="text-2xl md:hidden">March 2022 - December 2022</h3>
+                <h3 className="text-2xl font-semibold mb-2 drop-shadow-md" style={{ color: 'var(--accent-color)' }}>Vertobase Co., Ltd.</h3>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Write code front-end from design use React and NextJS </li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Write code Flutter from design detail write process pin login mobile and view page other</li>
               </div>
               {/* Card 2 */}
-              <div className="rounded-xl p-8 shadow-md max-w-3xl" style={{
+              <div className="rounded-xl p-8 shadow-md max-w-6xl" style={{
                 backgroundColor: 'var(--card-bg)',
                 color: 'var(--text-primary)',
                 border: `1px solid var(--border-color)`
               }}>
-                <h3 className="text-2xl md:hidden">2022 - Current</h3>
-                <h3 className="text-2xl font-semibold mb-2 drop-shadow-md" style={{ color: 'var(--accent-color)' }}>Experience2</h3>
-                <p className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Developed and maintained multiple web applications using React, Next.js, and TypeScript</p>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Implemented responsive designs and interactive UI components following best practices</p>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Collaborated with team members using Git version control and agile methodologies</p>
+                <h3 className="text-2xl md:hidden">Feb 2023 - Present</h3>
+                <h3 className="text-2xl font-semibold mb-2 drop-shadow-md" style={{ color: 'var(--accent-color)' }}>iApp Technology</h3>
+
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Created an API for sending data using JavaScript, PostgreSQL, and Express, leveraging backend development skills in JavaScript, SQL, and Express.js.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Developed an API for fetching data from the web using JavaScript, PostgreSQL, Puppeteer and Express, utilizing knowledge of RESTful API design and SQL queries.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Built an API for retrieving data from the Kibana database, integrating database management and data analytics tools.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Edited the API to send data to the homepage using React, JavaScript, PostgreSQL, and Express, combining frontend-backend integration with ReactJS and SQL.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Created a process to run commands in Jenkins for data extraction using Jenkins and Docker, applying CI/CD automation practices.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Edited the web front-end view for MA and fixed bugs using React, Next.js, JavaScript, and TypeScript, with UI improvements via NextUI, TailwindCSS, and Bootstrap.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Migrated Flutter code from mobile to web using Next.js and TypeScript, enhancing cross-platform development experience.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Wrote unit tests for the API and applied clean code principles using Jest, Postman, and Git version control.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Built the application as an Electron app for macOS and Windows, expanding deployment knowledge across desktop platforms.</li>
+                <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Designed a data extraction flow using draw.io (Diagrams.net)</li>
+                <li className="text-sm" style={{ color: 'var(--text-secondary)' }}>Wrote Python logic for checking MA, integrating Python scripting with backend processes.</li>
+
               </div>
             </div>
           </div>
@@ -484,47 +554,138 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 0.07 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto md:px-8 px-4">
+
           {/* Project 1 */}
-          <div className="mb-40">
+          <div className="md:mb-28 mb-16">
             <div className="flex flex-col md:flex-row items-start gap-10">
               {/* Left Content */}
-              <div className="md:w-1/2 mt-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Example Project 1</h2>
+              <div className="w-full mt-10">
+                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Project: NBTC - Drone Data Transmission</h2>
 
                 {/* Project Description Card */}
-                <div className="rounded-xl p-8 max-w-md" style={{ backgroundColor: 'var(--card-bg)' }}>
-                  <p style={{ color: 'var(--text-secondary)' }}>
-                    A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
-                  </p>
+                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
+                  <div style={{ color: 'var(--text-secondary)' }}>
+                    <li>
+                      Develop an API for transmitting drone data to both the mobile and web platforms.
+                    </li>
+                    <li>
+                      Present the API functionality to the client, explaining how the API works.
+                    </li>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Right Content - Project Image */}
-              <div className="md:w-1/2 relative">
-                <div className="shadow-2xl rounded-lg overflow-hidden w-full h-[390px]" style={{ border: `1px solid var(--border-color)` }}>
-                  <Image
-                    src="/programmer.png"
-                    alt="Project mockup showing a website wireframe"
-                    width={600}
-                    height={600}
-                    className="w-full h-auto"
-                  />
+
+          {/* Project 2 */}
+          <div className="md:mb-28 mb-16">
+            <div className="flex flex-col md:flex-row items-start gap-10">
+              {/* Left Content */}
+              <div className="w-full mt-10">
+                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Project: ACT</h2>
+
+                {/* Project Description Card */}
+                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
+                  <div style={{ color: 'var(--text-secondary)' }}>
+                    <li>
+                      Update the API for fetching data from the web.
+                    </li>
+                    <li>
+                      Update the API for fetching data from the Kibana database.
+                    </li>
+                    <li>
+                      Update the front-end view to reflect data from MA and the new database data sent.
+                    </li>
+                    <li>
+                      Write Python logic for project risk assessment.
+                    </li>
+                    <li>
+                      Redesign the flow for fetching data from 3 web pages: EGP, DBD, GOV.
+                    </li>
+                    <li>
+                      Update the API for fetching data from the 3 web pages (EGP, DBD, GOV) based on the previous version.
+                    </li>
+                    <li>
+                      Set up Jenkins processes to run commands for fetching project and company data.
+                    </li>
+                    <li>
+                      Implement code paths for project and company data as required.
+                    </li>
+                    <li>
+                      Create an Excel export for the required project and company data.
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 3 */}
+          <div className="md:mb-28 mb-16">
+            <div className="flex flex-col md:flex-row items-start gap-10">
+              {/* Left Content */}
+              <div className="w-full mt-10">
+                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Project: ACT Phase 2</h2>
+
+                {/* Project Description Card */}
+                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
+                  <div style={{ color: 'var(--text-secondary)' }}>
+                    <li>
+                      Design the flow for fetching project and company data from 3 web pages: EGP, DBD, and GOV.
+                    </li>
+                    <li>
+                      Develop an API to fetch project data from the 3 web pages (EGP, DBD, GOV) and store it in the database.
+                    </li>
+                    <li>
+                      Set up a Jenkins process to run commands for fetching project and company data.
+                    </li>
+                    <li>
+                      Develop the web view for the front-end of Phase 2.
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          {/* Project 4 */}
+          <div className="md:mb-28 mb-16">
+            <div className="flex flex-col md:flex-row items-start gap-10">
+              {/* Left Content */}
+              <div className="w-full mt-10">
+                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Product: Iapp Speech Flow for Web</h2>
+
+                {/* Project Description Card */}
+                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
+                  <div style={{ color: 'var(--text-secondary)' }}>
+                    <li>
+                      Plan the development of Iapp Speech Flow for Web and design the workflow.
+                    </li>
+                    <li>
+                      Convert the mobile code into a web format using Next.js.
+                    </li>
+                    <li>
+                      Design the code flow for Iapp Speech Flow on the Web.
+                    </li>
+                    <li>
+                      Build the application as an Electron app for macOS and Windows.
+                    </li>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Project 2 - Reversed layout */}
-          <div>
-            {/* Project 2 */}
+          {/* <div>
             <div className="mb-40">
               <div className="flex flex-col md:flex-row items-start gap-10">
-                {/* Left Content */}
                 <div className="md:w-1/2 mt-10">
                   <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Example Project 2</h2>
 
-                  {/* Project Description Card */}
                   <div className="rounded-xl p-8 max-w-md" style={{ backgroundColor: 'var(--card-bg)' }}>
                     <p style={{ color: 'var(--text-secondary)' }}>
                       A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
@@ -532,7 +693,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Right Content - Project Image */}
                 <div className="md:w-1/2 relative">
                   <div className="shadow-2xl rounded-lg overflow-hidden w-full h-[390px]" style={{ border: `1px solid var(--border-color)` }}>
                     <Image
@@ -546,7 +706,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </motion.section>
 
@@ -565,10 +725,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8 flex flex-col">
           <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Contact Information</h2>
           <div className="text-sm btn btn-soft w-[270px] mb-5" style={{ color: 'var(--text-secondary)' }}>
-            Email: <a href="mailto:contact@example.com">contact@example.com</a>
+            Email: <a href="mailto:contact@example.com">bananammm0001@gmail.com</a>
+          </div>
+          <div className="text-sm btn btn-soft w-[270px] mb-5" style={{ color: 'var(--text-secondary)' }}>
+            Phone: <a href="tel:+1234567890">0901834036</a>
           </div>
           <div className="text-sm btn btn-soft w-[270px]" style={{ color: 'var(--text-secondary)' }}>
-            Phone: <a href="tel:+1234567890">+1234567890</a>
+            Linkedin: <a href="https://www.linkedin.com/in/suthep-jantawee" target="_blank" rel="noopener noreferrer">in/suthep-jantawee</a>
           </div>
         </div>
       </motion.section>

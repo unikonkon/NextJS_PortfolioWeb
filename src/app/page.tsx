@@ -258,12 +258,12 @@ export default function Home() {
               I have 3+ years of experience in web development. I am passionate about developing web applications, continuously learning modern web technologies, and leveraging AI tools to enhance development processes.
             </p>
             <div className="flex gap-6 flex-wrap">
-              <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-colors" style={{ backgroundColor: 'var(--accent-color)' }}>
-                <a href="/resume.pdf" download="resume.pdf" target="_blank" rel="noopener noreferrer">
+              <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-50 transition-colors cursor-pointer" style={{ backgroundColor: 'var(--accent-color)' }}>
+                <a href="/ResumeSuthep.pdf" download="ResumeSuthep.pdf" target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </button>
-              <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-colors" style={{ backgroundColor: 'var(--accent-color)' }}>
+              <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-50 transition-colors cursor-pointer" style={{ backgroundColor: 'var(--accent-color)' }}>
                 <a href="https://github.com/unikonkon" target="_blank" rel="noopener noreferrer">
                   Github
                 </a>

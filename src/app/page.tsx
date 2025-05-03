@@ -119,6 +119,20 @@ export default function Home() {
 
               <li className="mb-4">
                 <a
+                  href="#home"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("home");
+                    const drawer = document.getElementById('my-drawer') as HTMLInputElement;
+                    if (drawer) drawer.checked = false;
+                  }}
+                  className={`hover:${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
+                >
+                  Home
+                </a>
+              </li>
+              <li className="mb-4">
+                <a
                   href="#skills"
                   onClick={(e) => {
                     e.preventDefault();

@@ -20,6 +20,7 @@ const splitText = (text: string) => {
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
+  const [activeTab, setActiveTab] = useState("projects");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -27,6 +28,10 @@ export default function Home() {
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
   };
 
   // Smooth scroll function
@@ -254,7 +259,7 @@ export default function Home() {
               ))}
             </h1>
             <p className="mb-10 max-w-md md:text-lg text-sm  bg-gray-400 rounded-lg p-4 lg:bg-transparent lg:p-0" style={{ color: 'var(--text-secondary)' }}>
-              I’m looking for a similar role as a Front-End Developer, Back-End Developer, or Full Stack Developer.
+              I'm looking for a similar role as a Front-End Developer, Back-End Developer, or Full Stack Developer.
               I have 3+ years of experience in web development. I am passionate about developing web applications, continuously learning modern web technologies, and leveraging AI tools to enhance development processes.
             </p>
             <div className="flex gap-6 flex-wrap">
@@ -526,6 +531,9 @@ export default function Home() {
               }}>
                 <h3 className="text-2xl md:hidden">March 2022 - December 2022</h3>
                 <h3 className="text-2xl font-semibold mb-2 drop-shadow-md" style={{ color: 'var(--accent-color)' }}>Vertobase Co., Ltd.</h3>
+                <p>
+                  <strong>Role:</strong> Front-end Developer
+                </p>
                 <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Write code front-end from design use React and NextJS </li>
                 <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Write code Flutter from design detail write process pin login mobile and view page other</li>
               </div>
@@ -537,7 +545,9 @@ export default function Home() {
               }}>
                 <h3 className="text-2xl md:hidden">Feb 2023 - Present</h3>
                 <h3 className="text-2xl font-semibold mb-2 drop-shadow-md" style={{ color: 'var(--accent-color)' }}>iApp Technology</h3>
-
+                <p>
+                  <strong>Role:</strong> Full Stack Developer
+                </p>
                 <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Created an API for sending data using JavaScript, PostgreSQL, and Express, leveraging backend development skills in JavaScript, SQL, and Express.js.</li>
                 <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Developed an API for fetching data from the web using JavaScript, PostgreSQL, Puppeteer and Express, utilizing knowledge of RESTful API design and SQL queries.</li>
                 <li className="text-sm mb-1" style={{ color: 'var(--text-secondary)' }}>Built an API for retrieving data from the Kibana database, integrating database management and data analytics tools.</li>
@@ -556,7 +566,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Projects Section */}
+      {/* Projects Section with Tabs */}
       <motion.section
         id="projects"
         className="py-24 bg-gradient-to-b"
@@ -568,159 +578,179 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 0.07 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="max-w-7xl mx-auto md:px-8 px-4">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Projects</h2>
 
-          {/* Project 1 */}
-          <div className="md:mb-28 mb-16">
-            <div className="flex flex-col md:flex-row items-start gap-10">
-              {/* Left Content */}
-              <div className="w-full mt-10">
-                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Project: NBTC - Drone Data Transmission</h2>
-
-                {/* Project Description Card */}
-                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
-                  <div style={{ color: 'var(--text-secondary)' }}>
-                    <li>
-                      Develop an API for transmitting drone data to both the mobile and web platforms.
-                    </li>
-                    <li>
-                      Present the API functionality to the client, explaining how the API works.
-                    </li>
-                  </div>
-                </div>
-              </div>
+          {/* Tab Navigation */}
+          <div className="flex justify-center">
+            <div className="tabs tabs-box mb-8 w-fit">
+              <button
+                className={`tab text-md md:text-lg ${activeTab === 'personal' ? 'tab-active font-bold' : ''}`}
+                onClick={() => handleTabChange('personal')}
+              >
+                Personal Projects
+              </button>
+              <button
+                className={`tab text-md md:text-lg  ${activeTab === 'projects' ? 'tab-active font-bold' : ''}`}
+                onClick={() => handleTabChange('projects')}
+              >
+                Work Projects
+              </button>
             </div>
           </div>
 
 
-          {/* Project 2 */}
-          <div className="md:mb-28 mb-16">
-            <div className="flex flex-col md:flex-row items-start gap-10">
-              {/* Left Content */}
-              <div className="w-full mt-10">
-                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Project: ACT</h2>
+          {/* Personal Projects Content */}
+          {activeTab === 'personal' && (
+            <div className="space-y-8">
 
-                {/* Project Description Card */}
-                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
-                  <div style={{ color: 'var(--text-secondary)' }}>
-                    <li>
-                      Update the API for fetching data from the web.
-                    </li>
-                    <li>
-                      Update the API for fetching data from the Kibana database.
-                    </li>
-                    <li>
-                      Update the front-end view to reflect data from MA and the new database data sent.
-                    </li>
-                    <li>
-                      Write Python logic for project risk assessment.
-                    </li>
-                    <li>
-                      Redesign the flow for fetching data from 3 web pages: EGP, DBD, GOV.
-                    </li>
-                    <li>
-                      Update the API for fetching data from the 3 web pages (EGP, DBD, GOV) based on the previous version.
-                    </li>
-                    <li>
-                      Set up Jenkins processes to run commands for fetching project and company data.
-                    </li>
-                    <li>
-                      Implement code paths for project and company data as required.
-                    </li>
-                    <li>
-                      Create an Excel export for the required project and company data.
-                    </li>
+              {/* Text-to-Speech App Project */}
+              <div className="rounded-xl p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
+                  <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Text-to-Speech App</h3>
+                  <p><strong>Role:</strong> Front-End Developer</p>
+                  <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS, Web Speech API</p>
+                  <li>Developed a web application for text-to-speech conversion using the Web Speech API and API from IAPP Technology</li>
+                  <li>Implemented voice selection and speech rate control features</li>
+                  <li>Created a responsive and user-friendly interface</li>
+                  <li>Deployed the application on Vercel for easy access</li>
+                  <li>Added support for multiple languages and voices</li>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href="https://github.com/unikonkon/NextJS_Text-to-Speech-App"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700"
+                    >
+                      View on GitHub →
+                    </a>
+                    <button className="btn btn-primary mb-4 w-[100px]" onClick={() => window.open('https://text-to-speech-app-kappa.vercel.app/', '_blank')}>
+                      Link Web
+                    </button>
                   </div>
+                </div>
+                <div className="xs:w-full md:w-1/2">
+
+                  <a href="https://text-to-speech-app-kappa.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img className="rounded-xl h-[350px] w-full" src="/project texttospeech.png" alt="Text-to-Speech App" />
+                  </a>
+                </div>
+              </div>
+
+              {/* PyThaiTTS Text-to-Speech Project */}
+              <div className="rounded-xl p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
+                  <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>PyThaiTTS Text-to-Speech</h3>
+                  <p><strong>Role:</strong> Full Stack Developer</p>
+                  <p><strong>Tools:</strong> Next.js, TypeScript, FastAPI, PyThaiTTS, Python</p>
+                  <li>Built a full-stack application for Thai text-to-speech conversion</li>
+                  <li>Developed a FastAPI backend service for handling PyThaiTTS processing</li>
+                  <li>Created a modern frontend interface using Next.js and TypeScript</li>
+                  <li>Implemented real-time text-to-speech conversion</li>
+                  <li>Set up a separate backend server for PyThaiTTS processing</li>
+                  <li>Integrated PyThaiTTS version 0.3.0 for Thai language support</li>
+                  <div className="mt-4">
+                    <a
+                      href="https://github.com/unikonkon/NextJS_Text-to-Speech-for-PyThaiTTS"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700"
+                    >
+                      View on GitHub →
+                    </a>
+                  </div>
+                </div>
+                <div className="xs:w-full md:w-1/2">
+                  <a href="https://github.com/unikonkon/NextJS_Text-to-Speech-for-PyThaiTTS" target="_blank" rel="noopener noreferrer">
+                    <img className="rounded-xl h-[350px] w-full" src="/project PyThaiTTS texttospeech.png" alt="PyThaiTTS Text-to-Speech" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Portfolio Website Project */}
+              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Portfolio Website</h3>
+                <div style={{ color: 'var(--text-secondary)' }}>
+                  <p><strong>Role:</strong> Front-End Developer</p>
+                  <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS, Framer Motion</p>
+                  <li>Developed a responsive portfolio website showcasing skills and projects</li>
+                  <li>Implemented dark/light theme switching functionality</li>
+                  <li>Created smooth animations and transitions using Framer Motion</li>
+                  <li>Optimized for performance and SEO</li>
+                </div>
+                <div className="mt-4">
+                  <a
+                    href="https://github.com/unikonkon/NextJS_PortfolioWeb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-700"
+                  >
+                    View on GitHub →
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
-          {/* Project 3 */}
-          <div className="md:mb-28 mb-16">
-            <div className="flex flex-col md:flex-row items-start gap-10">
-              {/* Left Content */}
-              <div className="w-full mt-10">
-                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Project: ACT Phase 2</h2>
+          {/* Work Projects Content */}
+          {activeTab === 'projects' && (
+            <div className="space-y-8">
+              {/* Project 1 */}
+              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Project: NBTC - Drone Data Transmission</h3>
+                <div style={{ color: 'var(--text-secondary)' }}>
+                  <p><strong>Role:</strong> Backend Developer</p>
+                  <p><strong>Tools:</strong> JavaScript, TypeScript, PostgreSQL, Express, GitLab, Jenkins, Postman</p>
+                  <li>Develop an API for transmitting drone data to both the mobile and web platforms</li>
+                  <li>Present the API functionality to the client, explaining how the API works.</li>
+                </div>
+              </div>
 
-                {/* Project Description Card */}
-                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
-                  <div style={{ color: 'var(--text-secondary)' }}>
-                    <li>
-                      Design the flow for fetching project and company data from 3 web pages: EGP, DBD, and GOV.
-                    </li>
-                    <li>
-                      Develop an API to fetch project data from the 3 web pages (EGP, DBD, GOV) and store it in the database.
-                    </li>
-                    <li>
-                      Set up a Jenkins process to run commands for fetching project and company data.
-                    </li>
-                    <li>
-                      Develop the web view for the front-end of Phase 2.
-                    </li>
-                  </div>
+              {/* Project 2 */}
+              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Project: ACT</h3>
+                <div style={{ color: 'var(--text-secondary)' }}>
+                  <p><strong>Role:</strong> Full Stack Developer</p>
+                  <p><strong>Tools:</strong> JavaScript, TypeScript, React, Elasticsearch, Express, GitLab, Jenkins, Postman, Ant Design</p>
+                  <li>Update the API for fetching data from the web.</li>
+                  <li>Update the API for fetching data from the Kibana database.</li>
+                  <li>Update the front-end view to reflect data from MA and the new database data sent.</li>
+                  <li>Write Python logic for project risk assessment.</li>
+                  <li>Redesign the flow for fetching data from 3 web pages: EGP, DBD, GOV.</li>
+                  <li>Update the API for fetching data from the 3 web pages (EGP, DBD, GOV) based on the previous version.</li>
+                  <li>Set up Jenkins processes to run commands for fetching project and company data.</li>
+                  <li>Implement code paths for project and company data as required.</li>
+                  <li>Create an Excel export for the required project and company data.</li>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Project: ACT Phase 2</h3>
+                <div style={{ color: 'var(--text-secondary)' }}>
+                  <p><strong>Role:</strong> Full Stack Developer</p>
+                  <p><strong>Tools:</strong> JavaScript, TypeScript, Next.js, Nodejs, PostgreSQL, Express, GitLab, Jenkins, Postman, Puppeteer, Ant Design</p>
+                  <li>Design the flow for fetching project and company data from 3 web pages: EGP, DBD, and GOV.</li>
+                  <li>Develop an API to fetch project data from the 3 web pages (EGP, DBD, GOV) and store it in the database.</li>
+                  <li>Set up a Jenkins process to run commands for fetching project and company data.</li>
+                  <li>Develop the web view for the front-end of Phase 2.</li>
+                </div>
+              </div>
+
+              {/* Project 4 */}
+              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Product: Iapp Speech Flow for Web</h3>
+                <div style={{ color: 'var(--text-secondary)' }}>
+                  <p><strong>Role:</strong> Full Stack Developer</p>
+                  <p><strong>Tools:</strong> JavaScript, TypeScript, Next.js, PostgreSQL, Express, GitLab, Jenkins, Postman, NextUI, TailwindCSS, Electron</p>
+                  <li>Plan the development of Iapp Speech Flow for Web and design the workflow.</li>
+                  <li>Convert the mobile code into a web format using Next.js.</li>
+                  <li>Design the code flow for Iapp Speech Flow on the Web.</li>
+                  <li>Build the application as an Electron app for macOS and Windows.</li>
                 </div>
               </div>
             </div>
-          </div>
-
-
-          {/* Project 4 */}
-          <div className="md:mb-28 mb-16">
-            <div className="flex flex-col md:flex-row items-start gap-10">
-              {/* Left Content */}
-              <div className="w-full mt-10">
-                <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Product: Iapp Speech Flow for Web</h2>
-
-                {/* Project Description Card */}
-                <div className="rounded-xl md:p-8 p-2 shadow-sm" style={{ backgroundColor: 'var(--card-bg)' }}>
-                  <div style={{ color: 'var(--text-secondary)' }}>
-                    <li>
-                      Plan the development of Iapp Speech Flow for Web and design the workflow.
-                    </li>
-                    <li>
-                      Convert the mobile code into a web format using Next.js.
-                    </li>
-                    <li>
-                      Design the code flow for Iapp Speech Flow on the Web.
-                    </li>
-                    <li>
-                      Build the application as an Electron app for macOS and Windows.
-                    </li>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project 2 - Reversed layout */}
-          {/* <div>
-            <div className="mb-40">
-              <div className="flex flex-col md:flex-row items-start gap-10">
-                <div className="md:w-1/2 mt-10">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Example Project 2</h2>
-
-                  <div className="rounded-xl p-8 max-w-md" style={{ backgroundColor: 'var(--card-bg)' }}>
-                    <p style={{ color: 'var(--text-secondary)' }}>
-                      A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="md:w-1/2 relative">
-                  <div className="shadow-2xl rounded-lg overflow-hidden w-full h-[390px]" style={{ border: `1px solid var(--border-color)` }}>
-                    <Image
-                      src="/programmer.png"
-                      alt="Project mockup showing a website wireframe"
-                      width={600}
-                      height={600}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
+          )}
         </div>
       </motion.section>
 

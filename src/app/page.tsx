@@ -259,7 +259,7 @@ export default function Home() {
               ))}
             </h1>
             <p className="mb-10 max-w-md md:text-lg text-sm  bg-gray-400 rounded-lg p-4 lg:bg-transparent lg:p-0" style={{ color: 'var(--text-secondary)' }}>
-              I'm looking for a similar role as a Front-End Developer, Back-End Developer, or Full Stack Developer.
+              I&apos;m looking for a similar role as a Front-End Developer, Back-End Developer, or Full Stack Developer.
               I have 3+ years of experience in web development. I am passionate about developing web applications, continuously learning modern web technologies, and leveraging AI tools to enhance development processes.
             </p>
             <div className="flex gap-6 flex-wrap">
@@ -585,16 +585,16 @@ export default function Home() {
           <div className="flex justify-center">
             <div className="tabs tabs-box mb-8 w-fit">
               <button
-                className={`tab text-md md:text-lg ${activeTab === 'personal' ? 'tab-active font-bold' : ''}`}
-                onClick={() => handleTabChange('personal')}
-              >
-                Personal Projects
-              </button>
-              <button
                 className={`tab text-md md:text-lg  ${activeTab === 'projects' ? 'tab-active font-bold' : ''}`}
                 onClick={() => handleTabChange('projects')}
               >
                 Work Projects
+              </button>
+              <button
+                className={`tab text-md md:text-lg ${activeTab === 'personal' ? 'tab-active font-bold' : ''}`}
+                onClick={() => handleTabChange('personal')}
+              >
+                Personal Projects
               </button>
             </div>
           </div>
@@ -632,7 +632,9 @@ export default function Home() {
                 <div className="xs:w-full md:w-1/2">
 
                   <a href="https://text-to-speech-app-kappa.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <img className="rounded-xl h-[350px] w-full" src="/project texttospeech.png" alt="Text-to-Speech App" />
+                    <Image
+                      width={500} height={220}
+                      className="rounded-xl h-[350px] w-full" src="/project texttospeech.png" alt="Text-to-Speech App" />
                   </a>
                 </div>
               </div>
@@ -662,7 +664,9 @@ export default function Home() {
                 </div>
                 <div className="xs:w-full md:w-1/2">
                   <a href="https://github.com/unikonkon/NextJS_Text-to-Speech-for-PyThaiTTS" target="_blank" rel="noopener noreferrer">
-                    <img className="rounded-xl h-[350px] w-full" src="/project PyThaiTTS texttospeech.png" alt="PyThaiTTS Text-to-Speech" />
+                    <Image
+                      width={500} height={220}
+                      className="rounded-xl h-[350px] w-full" src="/project PyThaiTTS texttospeech.png" alt="PyThaiTTS Text-to-Speech" />
                   </a>
                 </div>
               </div>

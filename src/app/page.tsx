@@ -604,6 +604,40 @@ export default function Home() {
           {activeTab === 'personal' && (
             <div className="space-y-8">
 
+              {/* Netflix App Project */}
+              <div className="rounded-xl p-4 sm:p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
+                  <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Netflix Clone App</h3>
+                  <p><strong>Role:</strong> Front-End Developer</p>
+                  <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS, NextUI</p>
+                  <li>Developed a responsive Netflix clone with modern UI/UX</li>
+                  <li>Implemented movie browsing and categorization features</li>
+                  <li>Created a responsive design that works across all devices</li>
+                  <li>Used Next.js for server-side rendering and optimized performance</li>
+                  <li>Deployed the application on Vercel for seamless hosting</li>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href="https://github.com/unikonkon/NextJS_Netflix_App"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700"
+                    >
+                      View on GitHub →
+                    </a>
+                    <button className="btn btn-primary mb-4 w-[110px]" onClick={() => window.open('https://next-js-netflix-app-5egp.vercel.app/', '_blank')}>
+                      Live Demo
+                    </button>
+                  </div>
+                </div>
+                <div className="xs:w-full md:w-1/2">
+                  <a href="https://next-js-netflix-app-5egp.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      width={500} height={350}
+                      className="rounded-xl h-[350px] w-full" src="/project Netflix.png" alt="Netflix Clone App" />
+                  </a>
+                </div>
+              </div>
+
               {/* Text-to-Speech App Project */}
               <div className="rounded-xl p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
@@ -624,8 +658,8 @@ export default function Home() {
                     >
                       View on GitHub →
                     </a>
-                    <button className="btn btn-primary mb-4 w-[100px]" onClick={() => window.open('https://text-to-speech-app-kappa.vercel.app/', '_blank')}>
-                      Link Web
+                    <button className="btn btn-primary mb-4 w-[110px]" onClick={() => window.open('https://text-to-speech-app-kappa.vercel.app/', '_blank')}>
+                      Live Demo
                     </button>
                   </div>
                 </div>
@@ -640,7 +674,7 @@ export default function Home() {
               </div>
 
               {/* PyThaiTTS Text-to-Speech Project */}
-              <div className="rounded-xl p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <div className="rounded-xl p-4 sm:p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
                   <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>PyThaiTTS Text-to-Speech</h3>
                   <p><strong>Role:</strong> Full Stack Developer</p>
@@ -671,8 +705,9 @@ export default function Home() {
                 </div>
               </div>
 
+
               {/* Portfolio Website Project */}
-              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <div className="rounded-xl p-4 sm:p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Portfolio Website</h3>
                 <div style={{ color: 'var(--text-secondary)' }}>
                   <p><strong>Role:</strong> Front-End Developer</p>
@@ -700,7 +735,7 @@ export default function Home() {
           {activeTab === 'projects' && (
             <div className="space-y-8">
               {/* Project 1 */}
-              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <div className="rounded-xl p-4 sm:p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Project: NBTC - Drone Data Transmission</h3>
                 <div style={{ color: 'var(--text-secondary)' }}>
                   <p><strong>Role:</strong> Backend Developer</p>
@@ -711,7 +746,7 @@ export default function Home() {
               </div>
 
               {/* Project 2 */}
-              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <div className="rounded-xl p-4 sm:p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Project: ACT</h3>
                 <div style={{ color: 'var(--text-secondary)' }}>
                   <p><strong>Role:</strong> Full Stack Developer</p>
@@ -729,7 +764,7 @@ export default function Home() {
               </div>
 
               {/* Project 3 */}
-              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <div className="rounded-xl p-4 sm:p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Project: ACT Phase 2</h3>
                 <div style={{ color: 'var(--text-secondary)' }}>
                   <p><strong>Role:</strong> Full Stack Developer</p>
@@ -742,7 +777,7 @@ export default function Home() {
               </div>
 
               {/* Project 4 */}
-              <div className="rounded-xl p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <div className="rounded-xl p-4 sm:p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Product: Iapp Speech Flow for Web</h3>
                 <div style={{ color: 'var(--text-secondary)' }}>
                   <p><strong>Role:</strong> Full Stack Developer</p>

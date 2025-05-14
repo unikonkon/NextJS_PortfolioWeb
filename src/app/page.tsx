@@ -639,7 +639,7 @@ export default function Home() {
                 <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
                   <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>CryptoTracker</h3>
                   <p><strong>Role:</strong> Front-End Developer</p>
-                  <p><strong>Tools:</strong> Next.js 15, TypeScript, TailwindCSS, CoinGecko API, Recharts</p>
+                  <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS, CoinGecko API, Recharts</p>
                   <li>Developed a modern cryptocurrency tracking website</li>
                   <li>Implemented categorized views for different types of cryptocurrencies (Store of Value, Smart Contract, Stablecoin, DeFi, etc.)</li>
                   <li>Created search and filter functionality for finding specific cryptocurrencies</li>

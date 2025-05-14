@@ -2,18 +2,82 @@
 /* HOLD THE ASTRONAUT */
 
 .background {
-    position: absolute;
-    width: 100%;
-    height: 500px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: Montserrat;
-    font-weight: bold;
-    z-index: 1;
-    row-gap: 1em;
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Montserrat;
+  font-weight: bold;
+  z-index: 1;
+  row-gap: 1em;
+  overflow: hidden; /* สำคัญ เพื่อซ่อนดาวตกที่ออกนอกขอบ */
+}
+
+
+/* ดาวตก */
+.shooting-star {
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(-45deg, white, rgba(255,255,255,0));
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px white);
+  animation: shooting-star 3.5s ease-in-out infinite;
+  transform-origin: left top;
+}
+@keyframes shooting-star {
+  0% {
+    opacity: 1;
+    height: 100px;
+    transform: rotate(-45deg) translateX(0) translateY(0);
   }
+  30% {
+    height: 80px;
+  }
+  60% {
+    height: 60px;
+  }
+  90% {
+    height: 40px;
+  }
+  100% {
+    top: 1000px; /* Default for mobile */
+    left: 120%;   /* เคลื่อนที่ไปขวาสุด */
+    opacity: 0;
+    height: 30px;
+    transform: rotate(-45deg) translateX(300px) translateY(300px);
+  }
+}
+
+@media (min-width: 1000px) {
+  @keyframes shooting-star {
+    0% {
+      opacity: 1;
+      height: 100px;
+      transform: rotate(-45deg) translateX(0) translateY(0);
+    }
+    20% {
+      height: 70px;
+    }
+    50% {
+      height: 50px;
+    }
+    80% {
+      height: 30px;
+    }
+    100% {
+      top: 1900px; /* For larger screens */
+      left: 120%;
+      opacity: 0;
+      height: 20px;
+      transform: rotate(-45deg) translateX(300px) translateY(300px);
+    }
+  }
+}
+
 
 
   .heading::before {

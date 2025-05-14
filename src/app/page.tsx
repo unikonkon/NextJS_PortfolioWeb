@@ -8,6 +8,8 @@ import "./css/backgroud.css";
 import "./css/switchTheme.css";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { FaEnvelope, FaPhone, FaLinkedin } from 'react-icons/fa';
+import "./css/contact.css";
 
 // Add splitText function
 const splitText = (text: string) => {
@@ -21,10 +23,23 @@ const splitText = (text: string) => {
 export default function Home() {
   const [theme, setTheme] = useState("dark");
   const [activeTab, setActiveTab] = useState("projects");
+  const [stars, setStars] = useState<Array<{ top: number, left: number, right: number, delay: number }>>([]);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    // Generate stars only on the client side
+    const generateRandom = (min: number, max: number) => Math.random() * (max - min) + min;
+    const newStars = Array(4).fill(0).map(() => ({
+      top: generateRandom(0, -300),  // ปรับตามพื้นที่ background สูง 700px
+      left: generateRandom(0, 900), // ปรับตามความกว้างที่เหมาะสม
+      right: generateRandom(0, 100), // ปรับตามความกว้างที่เหมาะสม
+      delay: generateRandom(0, 3.5), // ปรับดีเลย์สำหรับดาวตก
+    }));
+    setStars(newStars);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -47,6 +62,18 @@ export default function Home() {
   const { chars } = splitText("Hi, I am");
   const { charsName } = splitText("Suthep Jantawee");
   const { charsFullStack } = splitText("Full Stack Developer");
+
+  const ShootingStar = ({ delay, top, left, right }: { delay: number, top: number, left: number, right: number }) => (
+    <div
+      className="shooting-star hidden sm:block"
+      style={{
+        top: `${top}px`,
+        left: `${left}px`,
+        right: `${right}px`,
+        animationDelay: `${delay}s`,
+      }}
+    />
+  );
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
@@ -210,6 +237,9 @@ export default function Home() {
       {/* Background */}
       <div className="background">
         <div className="heading"></div>
+        {stars.map((star, i) => (
+          <ShootingStar key={i} delay={star.delay} top={star.top} left={star.left} right={star.right} />
+        ))}
       </div>
 
       {/* Hero Section */}
@@ -604,12 +634,46 @@ export default function Home() {
           {activeTab === 'personal' && (
             <div className="space-y-8">
 
+              {/* CryptoTracker Project */}
+              <div className="rounded-xl p-4 sm:p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
+                  <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>CryptoTracker</h3>
+                  <p><strong>Role:</strong> Front-End Developer</p>
+                  <p><strong>Tools:</strong> Next.js 15, TypeScript, TailwindCSS, CoinGecko API, Recharts</p>
+                  <li>Developed a modern cryptocurrency tracking website</li>
+                  <li>Implemented categorized views for different types of cryptocurrencies (Store of Value, Smart Contract, Stablecoin, DeFi, etc.)</li>
+                  <li>Created search and filter functionality for finding specific cryptocurrencies</li>
+                  <li>Integrated 7-day price charts for each cryptocurrency using Recharts</li>
+                  <li>Built a responsive design that works across all device sizes</li>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href="https://github.com/unikonkon/NextJS_CryptoTracker"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700"
+                    >
+                      View on GitHub →
+                    </a>
+                    <button className="btn btn-primary mb-4 w-[110px]" onClick={() => window.open('https://crypto-tracker-drab-eta.vercel.app/', '_blank')}>
+                      Live Demo
+                    </button>
+                  </div>
+                </div>
+                <div className="xs:w-full md:w-1/2">
+                  <a href="https://crypto-tracker-drab-eta.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      width={500} height={300}
+                      className="rounded-xl h-[300px] w-full" src="/project CryptoTracker.png" alt="CryptoTracker App" />
+                  </a>
+                </div>
+              </div>
+
               {/* Netflix App Project */}
               <div className="rounded-xl p-4 sm:p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
                   <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Netflix Clone App</h3>
                   <p><strong>Role:</strong> Front-End Developer</p>
-                  <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS, NextUI</p>
+                  <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS</p>
                   <li>Developed a responsive Netflix clone with modern UI/UX</li>
                   <li>Implemented movie browsing and categorization features</li>
                   <li>Created a responsive design that works across all devices</li>
@@ -705,10 +769,42 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Portfolio Website Project Old Version */}
+              <div className="rounded-xl p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
+                  <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Portfolio Website Old Version</h3>
+                  <p><strong>Role:</strong> Front-End Developer</p>
+                  <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS</p>
+                  <li>Built a clean and minimalist portfolio website to showcase my skills</li>
+                  <li>Implemented responsive design principles for all screen sizes</li>
+                  <li>Utilized TailwindCSS for efficient styling and consistent design</li>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href="https://github.com/unikonkon/NextJs_WebProtfolio"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700"
+                    >
+                      View on GitHub →
+                    </a>
+                    <button className="btn btn-primary mb-4 w-[110px]" onClick={() => window.open('https://faradaybanana.vercel.app/', '_blank')}>
+                      Live Demo
+                    </button>
+                  </div>
+                </div>
+                <div className="xs:w-full md:w-1/2">
+                  <a href="https://faradaybanana.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      width={500} height={220}
+                      className="rounded-xl h-[350px] w-full" src="/project webport1.png" alt="Portfolio Website Old Version" />
+                  </a>
+                </div>
+              </div>
 
-              {/* Portfolio Website Project */}
+
+              {/* Portfolio Website Project New Version */}
               <div className="rounded-xl p-4 sm:p-8 shadow-md" style={{ backgroundColor: 'var(--card-bg)' }}>
-                <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Portfolio Website</h3>
+                <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>Portfolio Website New Version</h3>
                 <div style={{ color: 'var(--text-secondary)' }}>
                   <p><strong>Role:</strong> Front-End Developer</p>
                   <p><strong>Tools:</strong> Next.js, TypeScript, TailwindCSS, Framer Motion</p>
@@ -728,6 +824,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+
             </div>
           )}
 
@@ -807,13 +904,19 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-8 flex flex-col">
           <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Contact Information</h2>
-          <div className="text-sm btn btn-soft w-[270px] mb-5" style={{ color: 'var(--text-secondary)' }}>
-            Email: <a href="mailto:contact@example.com">bananammm0001@gmail.com</a>
+
+          <div className="contact-item text-sm btn btn-soft w-[350px] mb-5" style={{ color: 'var(--text-secondary)' }}>
+            <FaEnvelope className="icon" />
+            Email: <a href="mailto:bananammm0001@gmail.com">bananammm0001@gmail.com</a>
           </div>
-          <div className="text-sm btn btn-soft w-[270px] mb-5" style={{ color: 'var(--text-secondary)' }}>
+
+          <div className="contact-item text-sm btn btn-soft w-[350px] mb-5" style={{ color: 'var(--text-secondary)' }}>
+            <FaPhone className="icon" />
             Phone: <a href="tel:+1234567890">0901834036</a>
           </div>
-          <div className="text-sm btn btn-soft w-[270px]" style={{ color: 'var(--text-secondary)' }}>
+
+          <div className="contact-item text-sm btn btn-soft w-[350px]" style={{ color: 'var(--text-secondary)' }}>
+            <FaLinkedin className="icon" />
             Linkedin: <a href="https://www.linkedin.com/in/suthep-jantawee" target="_blank" rel="noopener noreferrer">in/suthep-jantawee</a>
           </div>
         </div>

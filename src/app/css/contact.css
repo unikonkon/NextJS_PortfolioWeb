@@ -1,0 +1,27 @@
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .contact-item .icon {
+    color: var(--text-primary);
+    font-size: 1.25rem; /* ขนาดไอคอน */
+    min-width: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-item a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+  }
+  
+  .contact-item:hover .icon {
+    color: var(--accent-color); /* สมมติมีสีแอคเซนต์ */
+  }
+  
+  .contact-item:hover a {
+    color: var(--accent-color);
+  }
+  

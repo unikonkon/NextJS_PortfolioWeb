@@ -34,8 +34,8 @@ export default function Home() {
     const generateRandom = (min: number, max: number) => Math.random() * (max - min) + min;
     const newStars = Array(4).fill(0).map(() => ({
       top: generateRandom(0, -300),  // ปรับตามพื้นที่ background สูง 700px
-      left: generateRandom(0, 900), // ปรับตามความกว้างที่เหมาะสม
-      right: generateRandom(0, 100), // ปรับตามความกว้างที่เหมาะสม
+      left: generateRandom(0, 500), // ปรับตามความกว้างที่เหมาะสม
+      right: generateRandom(0, 200), // ปรับตามความกว้างที่เหมาะสม
       delay: generateRandom(0, 3.5), // ปรับดีเลย์สำหรับดาวตก
     }));
     setStars(newStars);
@@ -294,7 +294,7 @@ export default function Home() {
             </p>
             <div className="flex gap-6 flex-wrap">
               <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-50 transition-colors cursor-pointer" style={{ backgroundColor: 'var(--accent-color)' }}>
-                <a href="/ResumeSuthep.pdf" download="ResumeSuthep.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Resume Sutep Jantawee.pdf" download="Resume Sutep Jantawee.pdf" target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </button>

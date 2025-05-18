@@ -25,23 +25,38 @@
   background: linear-gradient(-45deg, white, rgba(255,255,255,0));
   border-radius: 50%;
   filter: drop-shadow(0 0 6px white);
-  animation: shooting-star 3.5s ease-in-out infinite;
+  animation: shooting-star 5.4s ease-in-out infinite;
   transform-origin: left top;
 }
 @keyframes shooting-star {
   0% {
     opacity: 1;
-    height: 100px;
+    height: 10px;
     transform: rotate(-45deg) translateX(0) translateY(0);
   }
-  30% {
+  10% {
+    height: 90px;
+  }
+  20% {
     height: 80px;
   }
-  60% {
+  30% {
+    height: 70px;
+  }
+  40% {
     height: 60px;
   }
-  90% {
+  50% {
+    height: 50px;
+  }
+  60% {
     height: 40px;
+  }
+  70% {
+    height: 30px;
+  }
+  80% {
+    height: 20px;
   }
   100% {
     top: 1000px; /* Default for mobile */
@@ -56,17 +71,32 @@
   @keyframes shooting-star {
     0% {
       opacity: 1;
-      height: 100px;
+      height: 10px;
       transform: rotate(-45deg) translateX(0) translateY(0);
     }
+    10% {
+      height: 90px;
+    }
     20% {
+      height: 80px;
+    }
+    30% {
       height: 70px;
+    }
+    40% {
+      height: 60px;
     }
     50% {
       height: 50px;
     }
-    80% {
+    60% {
+      height: 40px;
+    }
+    70% {
       height: 30px;
+    }
+    80% {
+      height: 20px;
     }
     100% {
       top: 1900px; /* For larger screens */

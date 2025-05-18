@@ -24,6 +24,7 @@ export default function Home() {
   const [theme, setTheme] = useState("dark");
   const [activeTab, setActiveTab] = useState("projects");
   const [stars, setStars] = useState<Array<{ top: number, left: number, right: number, delay: number }>>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -33,10 +34,10 @@ export default function Home() {
     // Generate stars only on the client side
     const generateRandom = (min: number, max: number) => Math.random() * (max - min) + min;
     const newStars = Array(4).fill(0).map(() => ({
-      top: generateRandom(0, -300),  // ปรับตามพื้นที่ background สูง 700px
-      left: generateRandom(0, 500), // ปรับตามความกว้างที่เหมาะสม
-      right: generateRandom(0, 200), // ปรับตามความกว้างที่เหมาะสม
-      delay: generateRandom(0, 3.5), // ปรับดีเลย์สำหรับดาวตก
+      top: generateRandom(0, -800),  // ปรับตามพื้นที่ background สูง 700px
+      left: generateRandom(0, 300), // ปรับตามความกว้างที่เหมาะสม
+      right: generateRandom(0, 1100), // ปรับตามความกว้างที่เหมาะสม
+      delay: generateRandom(1, 3), // ปรับดีเลย์สำหรับดาวตก
     }));
     setStars(newStars);
   }, []);
@@ -633,6 +634,82 @@ export default function Home() {
           {/* Personal Projects Content */}
           {activeTab === 'personal' && (
             <div className="space-y-8">
+
+              {/* WebRecord Sound Project */}
+              <div className="rounded-xl p-4 sm:p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="xs:w-full md:w-1/2 mb-4 md:mb-0" style={{ color: 'var(--text-secondary)' }}>
+                  <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--accent-color)' }}>WebRecord Sound App</h3>
+                  <p><strong>Role:</strong> Full Stack Developer</p>
+                  <p><strong>Tools:</strong> React, TypeScript, TailwindCSS, IndexedDB, Radix UI, Firebase Authentication</p>
+                  <li>Developed a browser-based audio recording application with local storage using IndexedDB</li>
+                  <li>Implemented audio recording, playback, and management features</li>
+                  <li>Created a modern, responsive user interface with Radix UI components</li>
+                  <li>Built with privacy-first approach - all data stays in the browser</li>
+                  <li>Added support for audio uploading and sharing via generated links</li>
+                  <li>Implemented user authentication and session management using Firebase Authentication for secure access control</li>
+                  
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href="https://github.com/unikonkon/React_WebRecord"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700"
+                    >
+                      View on GitHub →
+                    </a>
+                    <button className="btn btn-primary mb-4 w-[110px]" onClick={() => window.open('https://voice-record-phi.vercel.app/', '_blank')}>
+                      Live Demo
+                    </button>
+                  </div>
+                </div>
+                <div className="xs:w-full md:w-1/2 relative">
+                  <div className="relative rounded-xl overflow-hidden h-[400px] w-full">
+                    {/* Image Slider */}
+                    <div className="relative h-full w-full">
+                      {['/project WebRecord1.png', '/project WebRecord2.png', '/project WebRecord3.png', '/project WebRecord4.png'].map((img, index) => (
+                        <Image
+                          key={index}
+                          src={img}
+                          alt={`WebRecord App Screenshot ${index + 1}`}
+                          fill
+                          className={`object-cover transition-opacity duration-500 rounded-xl ${index === currentImageIndex ? 'opacity-100' : 'opacity-0 hidden'}`}
+                        />
+                      ))}
+                    </div>
+                    
+                    {/* Navigation Controls */}
+                    <div className="absolute inset-0 flex items-center justify-between p-2">
+                      <button 
+                        onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? 3 : prev - 1))}
+                        className="bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 transition z-10"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button 
+                        onClick={() => setCurrentImageIndex((prev) => (prev === 3 ? 0 : prev + 1))}
+                        className="bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 transition z-10"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    {/* Indicators */}
+                    <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+                      {[0, 1, 2, 3].map((dot) => (
+                        <button
+                          key={dot}
+                          onClick={() => setCurrentImageIndex(dot)}
+                          className={`w-2 h-2 rounded-full ${currentImageIndex === dot ? 'bg-white' : 'bg-gray-400'}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* CryptoTracker Project */}
               <div className="rounded-xl p-4 sm:p-8 shadow-md flex flex-col md:flex-row" style={{ backgroundColor: 'var(--card-bg)' }}>

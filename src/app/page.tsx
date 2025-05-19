@@ -10,7 +10,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin } from 'react-icons/fa';
 import "./css/contact.css";
-
+import "./css/ContactSection.css";
+import "./css/buttonResume.css";
 // Add splitText function
 const splitText = (text: string) => {
   return {
@@ -37,7 +38,7 @@ export default function Home() {
       top: generateRandom(0, -800),  // ปรับตามพื้นที่ background สูง 700px
       left: generateRandom(0, 300), // ปรับตามความกว้างที่เหมาะสม
       right: generateRandom(0, 1100), // ปรับตามความกว้างที่เหมาะสม
-      delay: generateRandom(1, 3), // ปรับดีเลย์สำหรับดาวตก
+      delay: generateRandom(3, 0.8), // ปรับดีเลย์สำหรับดาวตก
     }));
     setStars(newStars);
   }, []);
@@ -294,12 +295,12 @@ export default function Home() {
               I have 3+ years of experience in web development. I am passionate about developing web applications, continuously learning modern web technologies, and leveraging AI tools to enhance development processes.
             </p>
             <div className="flex gap-6 flex-wrap">
-              <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-50 transition-colors cursor-pointer" style={{ backgroundColor: 'var(--accent-color)' }}>
+              <button className="buttonResume cursor-pointer" style={{ backgroundColor: 'var(--accent-color)' }}>
                 <a href="/Resume Sutep Jantawee.pdf" download="Resume Sutep Jantawee.pdf" target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </button>
-              <button className="px-6 py-3 rounded-md font-medium hover:bg-opacity-50 transition-colors cursor-pointer" style={{ backgroundColor: 'var(--accent-color)' }}>
+              <button className="buttonResume cursor-pointer" style={{ backgroundColor: 'var(--accent-color)' }}>
                 <a href="https://github.com/unikonkon" target="_blank" rel="noopener noreferrer">
                   Github
                 </a>
@@ -442,70 +443,70 @@ export default function Home() {
               <div className="md:p-6">
 
                 <div className="xs:flex-col md:flex text-start">
-                  <div className="xs:w-full mb-6">
+                  <div className="xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-xl md:text-2xl lg:text-3xl">Languages</strong>
                       <br />
                       <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>HTML, CSS, JavaScript, TypeScript, Dart, SQL(Database)</strong>
                     </p>
                   </div>
-                  <div className="text-left xs:w-full mb-6">
+                  <div className="text-left xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-2xl md:text-3xl">DevOps & CI/CD Tools</strong>
                       <br />
-                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Git Version Control, Jenkins, Vercel, Docker</strong>
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Git Version Control, Jenkins, Vercel, Docker</strong>
                     </p>
                   </div>
                 </div>
 
-                <div className="xs:flex-col md:flex text-start ">
-                  <div className="xs:w-full mb-6">
+                <div className="xs:flex-col md:flex text-start">
+                  <div className="xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-2xl md:text-3xl">Frameworks & Libraries</strong>
                       <br />
-                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>ReactJS, NextJS, NextUI, Flutter, Express.js, Electron, Jest, Tailwindcss, Ant Design, DaisyUI</strong>
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>ReactJS, NextJS, NextUI, Flutter, Express.js, Electron, Tailwindcss, Ant Design, DaisyUI</strong>
                     </p>
                   </div>
-                  <div className="text-left xs:w-full mb-6">
+                  <div className="text-left xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-2xl md:text-3xl">Databases & Data Tools</strong>
                       <br />
-                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>PostgreSQL, Kibana, Firebase, Prisma</strong>
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>PostgreSQL, Kibana, Firebase, Prisma</strong>
                     </p>
                   </div>
                 </div>
 
 
                 <div className="xs:flex-col md:flex text-start">
-                  <div className="xs:w-full mb-6">
+                  <div className="xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-2xl md:text-3xl">Testing & API Tools</strong>
                       <br />
-                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Postman, Jest</strong>
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Postman, Jest, SonarQube</strong>
                     </p>
                   </div>
-                  <div className="text-left xs:w-full mb-6">
+                  <div className="text-left xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-2xl md:text-3xl">Design & Collaboration Tools</strong>
                       <br />
-                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Figma, Draw.io (Diagrams.net), Slack, Lark, Monday, Discord</strong>
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Figma, Draw.io (Diagrams.net), Slack, Lark, Monday, Discord</strong>
                     </p>
                   </div>
                 </div>
 
                 <div className="xs:flex-col md:flex text-start">
-                  <div className="xs:w-full mb-6">
+                  <div className="xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-2xl md:text-3xl">AI Tools</strong>
                       <br />
-                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Cursor, Blackbox.AI, Gemini, Chat GPT</strong>
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Cursor, Blackbox.AI, Gemini, Chat GPT</strong>
                     </p>
                   </div>
-                  <div className="text-left xs:w-full mb-6">
+                  <div className="text-left xs:w-full mb-6 pr-4">
                     <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
                       <strong className="text-2xl md:text-3xl">Soft Skills</strong>
                       <br />
-                      <strong className={`text-sm md:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Creativity, Critical thinking, Responsibility, Problem solving, Communication, Teamwork</strong>
+                      <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Creativity, Critical thinking, Responsibility, Problem solving, Communication, Teamwork</strong>
                     </p>
                   </div>
 
@@ -647,7 +648,7 @@ export default function Home() {
                   <li>Built with privacy-first approach - all data stays in the browser</li>
                   <li>Added support for audio uploading and sharing via generated links</li>
                   <li>Implemented user authentication and session management using Firebase Authentication for secure access control</li>
-                  
+
                   <div className="mt-4 flex flex-col gap-2">
                     <a
                       href="https://github.com/unikonkon/React_WebRecord"
@@ -676,10 +677,10 @@ export default function Home() {
                         />
                       ))}
                     </div>
-                    
+
                     {/* Navigation Controls */}
                     <div className="absolute inset-0 flex items-center justify-between p-2">
-                      <button 
+                      <button
                         onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? 3 : prev - 1))}
                         className="bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 transition z-10"
                       >
@@ -687,7 +688,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                       </button>
-                      <button 
+                      <button
                         onClick={() => setCurrentImageIndex((prev) => (prev === 3 ? 0 : prev + 1))}
                         className="bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-70 transition z-10"
                       >
@@ -696,7 +697,7 @@ export default function Home() {
                         </svg>
                       </button>
                     </div>
-                    
+
                     {/* Indicators */}
                     <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
                       {[0, 1, 2, 3].map((dot) => (
@@ -979,23 +980,127 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 0.07 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="max-w-7xl mx-auto px-8 flex flex-col">
+        <div className="max-w-7xl mx-auto pl-4 sm:px-8 flex flex-col">
           <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Contact Information</h2>
 
-          <div className="contact-item text-sm btn btn-soft w-[350px] mb-5" style={{ color: 'var(--text-secondary)' }}>
-            <FaEnvelope className="icon" />
-            Email: <a href="mailto:bananammm0001@gmail.com">bananammm0001@gmail.com</a>
-          </div>
+          <button className="buttonContactSection mb-5 w-[300px] md:w-[370px] text-sm md:text-base">
+            <div className="outlineContactSection"></div>
+            <div className="state state--default">
+              <div className="icon">
+                <FaEnvelope />
+              </div>
+              <a href="mailto:bananammm0001@gmail.com">
+                <p>
+                  <span style={{ '--i': 0 } as React.CSSProperties}>E</span>
+                  <span style={{ '--i': 1 } as React.CSSProperties}>m</span>
+                  <span style={{ '--i': 2 } as React.CSSProperties}>a</span>
+                  <span style={{ '--i': 3 } as React.CSSProperties}>i</span>
+                  <span style={{ '--i': 4 } as React.CSSProperties}>l</span>
+                  <span style={{ '--i': 5 } as React.CSSProperties}>:</span>
+                  <span style={{ '--i': 6 } as React.CSSProperties}> </span>
+                  <span style={{ '--i': 7 } as React.CSSProperties}>b</span>
+                  <span style={{ '--i': 8 } as React.CSSProperties}>a</span>
+                  <span style={{ '--i': 9 } as React.CSSProperties}>n</span>
+                  <span style={{ '--i': 10 } as React.CSSProperties}>a</span>
+                  <span style={{ '--i': 11 } as React.CSSProperties}>n</span>
+                  <span style={{ '--i': 12 } as React.CSSProperties}>a</span>
+                  <span style={{ '--i': 13 } as React.CSSProperties}>m</span>
+                  <span style={{ '--i': 14 } as React.CSSProperties}>m</span>
+                  <span style={{ '--i': 15 } as React.CSSProperties}>m</span>
+                  <span style={{ '--i': 16 } as React.CSSProperties}>0</span>
+                  <span style={{ '--i': 17 } as React.CSSProperties}>0</span>
+                  <span style={{ '--i': 18 } as React.CSSProperties}>0</span>
+                  <span style={{ '--i': 19 } as React.CSSProperties}>1</span>
+                  <span style={{ '--i': 20 } as React.CSSProperties}>@</span>
+                  <span style={{ '--i': 21 } as React.CSSProperties}>g</span>
+                  <span style={{ '--i': 22 } as React.CSSProperties}>m</span>
+                  <span style={{ '--i': 23 } as React.CSSProperties}>a</span>
+                  <span style={{ '--i': 24 } as React.CSSProperties}>i</span>
+                  <span style={{ '--i': 25 } as React.CSSProperties}>l</span>
+                  <span style={{ '--i': 26 } as React.CSSProperties}>.</span>
+                  <span style={{ '--i': 27 } as React.CSSProperties}>c</span>
+                  <span style={{ '--i': 28 } as React.CSSProperties}>o</span>
+                  <span style={{ '--i': 29 } as React.CSSProperties}>m</span>
+                </p>
+              </a>
 
-          <div className="contact-item text-sm btn btn-soft w-[350px] mb-5" style={{ color: 'var(--text-secondary)' }}>
-            <FaPhone className="icon" />
-            Phone: <a href="tel:+1234567890">0901834036</a>
-          </div>
+            </div>
+          </button>
 
-          <div className="contact-item text-sm btn btn-soft w-[350px]" style={{ color: 'var(--text-secondary)' }}>
-            <FaLinkedin className="icon" />
-            Linkedin: <a href="https://www.linkedin.com/in/suthep-jantawee" target="_blank" rel="noopener noreferrer">in/suthep-jantawee</a>
-          </div>
+          <button className="buttonContactSection mb-5 w-[300px] md:w-[370px] text-sm md:text-base">
+            <div className="outlineContactSection"></div>
+            <div className="state state--default">
+              <div className="icon">
+                <FaPhone />
+              </div>
+              <a href="tel:+66901834036">
+
+                <p>
+                  <span style={{ '--i': 0 } as React.CSSProperties}>P</span>
+                  <span style={{ '--i': 1 } as React.CSSProperties}>h</span>
+                  <span style={{ '--i': 2 } as React.CSSProperties}>o</span>
+                  <span style={{ '--i': 3 } as React.CSSProperties}>n</span>
+                  <span style={{ '--i': 4 } as React.CSSProperties}>e</span>
+                  <span style={{ '--i': 5 } as React.CSSProperties}>:</span>
+                  <span style={{ '--i': 6 } as React.CSSProperties}> </span>
+                  <span style={{ '--i': 7 } as React.CSSProperties}>0</span>
+                  <span style={{ '--i': 8 } as React.CSSProperties}>9</span>
+                  <span style={{ '--i': 9 } as React.CSSProperties}>0</span>
+                  <span style={{ '--i': 10 } as React.CSSProperties}>1</span>
+                  <span style={{ '--i': 11 } as React.CSSProperties}>8</span>
+                  <span style={{ '--i': 12 } as React.CSSProperties}>3</span>
+                  <span style={{ '--i': 13 } as React.CSSProperties}>4</span>
+                  <span style={{ '--i': 14 } as React.CSSProperties}>0</span>
+                  <span style={{ '--i': 15 } as React.CSSProperties}>3</span>
+                  <span style={{ '--i': 16 } as React.CSSProperties}>6</span>
+                </p>
+              </a>
+
+            </div>
+          </button>
+
+          <button className="buttonContactSection mb-5 w-[300px] md:w-[370px] text-sm md:text-base">
+            <div className="outlineContactSection"></div>
+            <div className="state state--default">
+              <div className="icon">
+                <FaLinkedin />
+              </div>
+              <a href="https://www.linkedin.com/in/suthep-jantawee" target="_blank" rel="noopener noreferrer">
+
+                <p>
+                  <span style={{ '--i': 0 } as React.CSSProperties}>L</span>
+                  <span style={{ '--i': 1 } as React.CSSProperties}>i</span>
+                  <span style={{ '--i': 2 } as React.CSSProperties}>n</span>
+                  <span style={{ '--i': 3 } as React.CSSProperties}>k</span>
+                  <span style={{ '--i': 4 } as React.CSSProperties}>e</span>
+                  <span style={{ '--i': 5 } as React.CSSProperties}>d</span>
+                  <span style={{ '--i': 6 } as React.CSSProperties}>i</span>
+                  <span style={{ '--i': 7 } as React.CSSProperties}>n</span>
+                  <span style={{ '--i': 8 } as React.CSSProperties}>:</span>
+                  <span style={{ '--i': 9 } as React.CSSProperties}> </span>
+                  <span style={{ '--i': 10 } as React.CSSProperties}>i</span>
+                  <span style={{ '--i': 11 } as React.CSSProperties}>n</span>
+                  <span style={{ '--i': 12 } as React.CSSProperties}>/</span>
+                  <span style={{ '--i': 13 } as React.CSSProperties}>s</span>
+                  <span style={{ '--i': 14 } as React.CSSProperties}>u</span>
+                  <span style={{ '--i': 15 } as React.CSSProperties}>t</span>
+                  <span style={{ '--i': 16 } as React.CSSProperties}>h</span>
+                  <span style={{ '--i': 17 } as React.CSSProperties}>e</span>
+                  <span style={{ '--i': 18 } as React.CSSProperties}>p</span>
+                  <span style={{ '--i': 19 } as React.CSSProperties}>-</span>
+                  <span style={{ '--i': 20 } as React.CSSProperties}>j</span>
+                  <span style={{ '--i': 21 } as React.CSSProperties}>a</span>
+                  <span style={{ '--i': 22 } as React.CSSProperties}>n</span>
+                  <span style={{ '--i': 23 } as React.CSSProperties}>t</span>
+                  <span style={{ '--i': 24 } as React.CSSProperties}>a</span>
+                  <span style={{ '--i': 25 } as React.CSSProperties}>w</span>
+                  <span style={{ '--i': 26 } as React.CSSProperties}>e</span>
+                  <span style={{ '--i': 27 } as React.CSSProperties}>e</span>
+                </p>
+              </a>
+            </div>
+          </button>
+
         </div>
       </motion.section>
     </div>

@@ -11,6 +11,7 @@ interface WorkProjectCardProps {
   icon: string;
   delay?: number;
   colorScheme?: 'blue' | 'yellow' | 'red' | 'green' | 'purple' | 'indigo' | 'orange';
+  demoUrl?: string;
 }
 
 const colorSchemes = {
@@ -31,12 +32,13 @@ export default function WorkProjectCard({
   features,
   icon,
   delay = 0,
-  colorScheme = 'blue'
+  colorScheme = 'blue',
+  demoUrl
 }: WorkProjectCardProps) {
   return (
-    <motion.div 
+    <motion.div
       className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
-      style={{ 
+      style={{
         backgroundColor: 'var(--card-bg)',
         border: `1px solid var(--border-color)`
       }}
@@ -45,10 +47,10 @@ export default function WorkProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
     >
-      <div className="p-8">
+      <div className="p-6 xl:p-8">
         <div className="flex items-center mb-4">
-          <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4" 
-               style={{ backgroundColor: 'var(--accent-color)' }}>
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4"
+            style={{ backgroundColor: 'var(--accent-color)' }}>
             <span className="text-2xl">{icon}</span>
           </div>
           <div>
@@ -60,11 +62,11 @@ export default function WorkProjectCard({
             </p>
           </div>
         </div>
-        
+
         <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
           {description}
         </p>
-        
+
         <div className="flex flex-wrap gap-2 mb-6">
           {technologies.map((tech, index) => (
             <span key={index} className={`px-2 py-1 rounded-lg text-xs ${colorSchemes[colorScheme]}`}>
@@ -77,10 +79,23 @@ export default function WorkProjectCard({
           {features.map((feature, index) => (
             <div key={index} className="flex items-center text-sm" style={{ color: 'var(--text-secondary)' }}>
               <span className="w-2 h-2 rounded-full bg-green-400 mr-3"></span>
-              {feature}
+              <p>{feature}</p>
             </div>
           ))}
         </div>
+        {demoUrl && (
+          <div className="mt-6">
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-white py-2 px-10 rounded-xl text-center text-sm font-medium transition-colors"
+              style={{ backgroundColor: 'var(--accent-color)' }}
+            >
+              🚀 Website Link ACT AI
+            </a>
+          </div>
+        )}
       </div>
     </motion.div>
   );

@@ -110,7 +110,8 @@ export default function ProjectsSection() {
         "Develop the web view for the front-end of Phase 2"
       ],
       icon: "🚀",
-      colorScheme: "purple" as const
+      colorScheme: "purple" as const,
+      demoUrl: "https://actai.co/"
     },
     {
       title: "Iapp Speech Flow",
@@ -129,30 +130,29 @@ export default function ProjectsSection() {
     {
       title: "NBTC - Drone Data Transmission",
       role: "Backend Developer",
-      description: "Developed API for transmitting drone data to mobile and web platforms with client presentations.",
+      description: "Developed a Proxy API for transmitting drone data to mobile and web platforms, ensuring secure and compliant data transmission with NBTC regulations",
       technologies: ["JavaScript", "TypeScript", "PostgreSQL", "Express", "GitLab", "Jenkins", "Postman"],
       features: [
-        "Develop an API for transmitting drone data to both the mobile and web platforms",
-        "Present the API functionality to the client, explaining how the API works"
+        "Developed an API for transmitting drone data to both mobile and web platforms, ensuring data is transmitted securely and in compliance with NBTC regulations",
+        "Provided real-time logging and error handling to track ensure the integrity of data during transmission",
+        "Presented the API functionality to the client, explaining how the API works and ensuring they understand how it complies with NBTC regulations"
       ],
       icon: "🚁",
       colorScheme: "blue" as const
     }
-  ];
 
+  ];
+  //
   return (
     <motion.section
       id="projects"
       className="py-24 bg-gradient-to-b"
-      style={{
-        background: `linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg))`
-      }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.07 }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-8xl mx-auto px-8">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{ color: 'var(--text-primary)' }}>Projects</h2>
 
         {/* Tab Navigation - Modern Design */}
@@ -161,8 +161,8 @@ export default function ProjectsSection() {
             style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)' }}>
             <button
               className={`px-5 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base ${activeTab === 'personal'
-                  ? 'text-white shadow-lg transform scale-105'
-                  : 'text-gray-400 hover:text-gray-200'
+                ? 'text-white shadow-lg transform scale-105'
+                : 'text-gray-400 hover:text-gray-200'
                 }`}
               style={{
                 backgroundColor: activeTab === 'personal' ? 'var(--accent-color)' : 'transparent'
@@ -173,8 +173,8 @@ export default function ProjectsSection() {
             </button>
             <button
               className={`px-5 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base ${activeTab === 'projects'
-                  ? 'text-white shadow-lg transform scale-105'
-                  : 'text-gray-400 hover:text-gray-200'
+                ? 'text-white shadow-lg transform scale-105'
+                : 'text-gray-400 hover:text-gray-200'
                 }`}
               style={{
                 backgroundColor: activeTab === 'projects' ? 'var(--accent-color)' : 'transparent'
@@ -221,6 +221,7 @@ export default function ProjectsSection() {
                 icon={project.icon}
                 delay={index * 0.1}
                 colorScheme={project.colorScheme}
+                demoUrl={project.demoUrl}
               />
             ))}
           </div>

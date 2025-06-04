@@ -50,7 +50,7 @@ export default function Home() {
       <Background />
 
       {/* Hero Section */}
-      <HeroSection theme={theme} />
+      <HeroSection theme={theme} scrollToSection={scrollToSection} />
 
       {/* Skills & Technologies Section */}
       <SkillsSection theme={theme} />

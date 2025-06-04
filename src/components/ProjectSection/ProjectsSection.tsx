@@ -157,10 +157,10 @@ export default function ProjectsSection() {
 
         {/* Tab Navigation - Modern Design */}
         <div className="flex justify-center mb-12">
-          <div className="flex bg-opacity-10 backdrop-blur-lg rounded-2xl p-2 border border-opacity-20"
+          <div className="flex bg-opacity-10 backdrop-blur-lg rounded-2xl px-3 py-2 border border-opacity-20 gap-2"
             style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)' }}>
             <button
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base ${activeTab === 'personal'
+              className={`px-5 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base ${activeTab === 'personal'
                   ? 'text-white shadow-lg transform scale-105'
                   : 'text-gray-400 hover:text-gray-200'
                 }`}
@@ -172,7 +172,7 @@ export default function ProjectsSection() {
               🚀 Personal Projects
             </button>
             <button
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base ${activeTab === 'projects'
+              className={`px-5 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base ${activeTab === 'projects'
                   ? 'text-white shadow-lg transform scale-105'
                   : 'text-gray-400 hover:text-gray-200'
                 }`}

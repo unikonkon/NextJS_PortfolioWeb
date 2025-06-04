@@ -20,6 +20,9 @@
   --nav-text-color: #333333;
   --nav-text-hover: #666666;
   --nav-border-color: #333333;
+  --text-purple-300: #a66eff;
+  --text-yellow-300: #e4bd1f;
+  --text-pink-400: #ff8dc7;
 }
 
 [data-theme="dark"] {
@@ -36,6 +39,9 @@
   --nav-text-color: #ffffff;
   --nav-text-hover: #d1d5db;
   --nav-border-color: #ffffff;
+  --text-purple-300: #8b45ff;
+  --text-yellow-300: #ffd700;
+  --text-pink-400: #ff69b4;
 }
 
 

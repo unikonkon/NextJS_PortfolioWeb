@@ -40,7 +40,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <motion.div 
-      className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
+      className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-100 transform hover:-translate-y-2"
       style={{ 
         backgroundColor: 'var(--card-bg)',
         border: `1px solid var(--border-color)`

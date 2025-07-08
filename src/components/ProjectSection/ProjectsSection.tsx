@@ -15,6 +15,17 @@ export default function ProjectsSection() {
   // Personal projects data
   const personalProjects = [
     {
+      title: "📰 Crypto News Analysis",
+      role: "Full Stack Developer",
+      description: "AI-powered crypto news aggregator with sentiment analysis and trending score using Google Gemini API. Real-time updates with RSS feeds from major crypto news sources.",
+      image: "/CryptoNews3.png",
+      technologies: ["Next.js", "TypeScript", "Supabase", "Google Gemini API", "TailwindCSS", "RSS Parser"],
+      githubUrl: "https://github.com/unikonkon/NextJS_Crypto_News_Aggregator",
+      demoUrl: "https://crypto-news-aggregator-alpha.vercel.app/",
+      featured: true,
+      colorScheme: "orange" as const
+    },
+    {
       title: "🎵 WebRecord Sound App",
       role: "Full Stack Developer",
       description: "Browser-based audio recording with IndexedDB storage, Firebase auth, and privacy-first approach.",

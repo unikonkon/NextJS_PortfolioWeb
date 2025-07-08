@@ -11,8 +11,8 @@ interface SkillsSectionProps {
 export default function SkillsSection({ theme }: SkillsSectionProps) {
   // Animation variants for skill icons
   const iconVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
       scale: 0.5
     },
@@ -69,8 +69,8 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
   };
 
   const skillCardVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 30,
       scale: 0.95
     },
@@ -177,8 +177,8 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
       `}</style>
 
       <div className="w-full text-center justify-center items-center">
-        <motion.h2 
-          className="text-4xl md:text-5xl font-bold mb-12 glow-text" 
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-12 glow-text"
           style={{ color: 'var(--text-primary)' }}
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -188,7 +188,7 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
         </motion.h2>
 
         {/* Skill Icons with Staggered Animation */}
-        <motion.div 
+        <motion.div
           className="flex justify-center items-center sm:space-x-6 md:space-x-16 space-x-2 mb-10"
           variants={containerVariants}
           initial="hidden"
@@ -205,9 +205,9 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
               className="skill-icon"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <FontAwesomeIcon 
-                icon={skill.icon} 
-                className="w-8 h-8 md:text-4xl text-xl transition-all duration-300" 
+              <FontAwesomeIcon
+                icon={skill.icon}
+                className="w-8 h-8 md:text-4xl text-xl transition-all duration-300"
                 style={{ color: skill.color }}
               />
             </motion.div>
@@ -215,7 +215,7 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
         </motion.div>
 
         <div className="flex justify-center items-center">
-          <motion.div 
+          <motion.div
             className="skill-card cardSkills"
             variants={skillCardVariants}
             initial="hidden"
@@ -351,7 +351,7 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
               }}
             ></motion.span>
 
-            <motion.div 
+            <motion.div
               className="md:p-6"
               variants={containerVariants}
               initial="hidden"
@@ -359,94 +359,70 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
               viewport={{ once: true }}
             >
               <div className="xs:flex-col md:flex text-start">
-                <motion.div 
+                <motion.div
                   className="xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-xl md:text-2xl lg:text-3xl glow-text">Languages</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>HTML, CSS, JavaScript, TypeScript, Dart, SQL(Database)</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">Languages</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>HTML, CSS, JavaScript, TypeScript, Dart, SQL(Database)</p>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="text-left xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-2xl md:text-3xl glow-text">DevOps & CI/CD Tools</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Git Version Control, Jenkins, Vercel, Docker</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">DevOps & CI/CD Tools</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Git Version Control, Jenkins, Vercel, Docker</p>
                 </motion.div>
               </div>
 
               <div className="xs:flex-col md:flex text-start">
-                <motion.div 
+                <motion.div
                   className="xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-2xl md:text-3xl glow-text">Frameworks & Libraries</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>ReactJS, NextJS, NextUI, Flutter, Express.js, Electron, Tailwindcss, Ant Design, DaisyUI</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">Frameworks & Libraries</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>ReactJS, NextJS, NextUI, Flutter, Express.js, Electron, Tailwindcss, Ant Design, DaisyUI</p>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="text-left xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-2xl md:text-3xl glow-text">Databases & Data Tools</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>PostgreSQL, Kibana, Firebase, Prisma</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">Databases & Data Tools</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>PostgreSQL, Kibana, Firebase, Prisma, Supabase</p>
                 </motion.div>
               </div>
 
               <div className="xs:flex-col md:flex text-start">
-                <motion.div 
+                <motion.div
                   className="xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-2xl md:text-3xl glow-text">Testing & API Tools</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Postman, Jest, SonarQube</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">Testing & API Tools</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Postman, Jest, SonarQube</p>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="text-left xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-2xl md:text-3xl glow-text">Design & Collaboration Tools</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Figma, Draw.io (Diagrams.net), Slack, Lark, Monday, Discord</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">Design & Collaboration Tools</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Figma, Draw.io (Diagrams.net), Slack, Lark, Monday, Discord</p>
                 </motion.div>
               </div>
 
               <div className="xs:flex-col md:flex text-start">
-                <motion.div 
+                <motion.div
                   className="xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-2xl md:text-3xl glow-text">AI Tools</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Cursor, Blackbox.AI, Gemini, Chat GPT</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">AI Tools</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Cursor, Blackbox.AI, Gemini, Google Gemini API, Chat GPT</p>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="text-left xs:w-full mb-6 pr-4"
                   variants={categoryVariants}
                 >
-                  <p className={theme === 'dark' ? 'text-white' : 'text-black'}>
-                    <strong className="text-2xl md:text-3xl glow-text">Soft Skills</strong>
-                    <br />
-                    <strong className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Creativity, Critical thinking, Responsibility, Problem solving, Communication, Teamwork</strong>
-                  </p>
+                  <p className="text-xl md:text-2xl lg:text-3xl glow-text mb-2">Soft Skills</p>
+                  <p className={`text-sm md:text-md lg:text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Creativity, Critical thinking, Responsibility, Problem solving, Communication, Teamwork</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -455,23 +431,23 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
 
         {/* Animated SVG Ellipses */}
         <div className="w-full flex lg:h-[200px] h-[100px] justify-center items-center">
-          <motion.svg 
-            aria-hidden="true" 
-            className="absolute inset-0 w-full h-full mt-[100px]" 
-            fill="none" 
-            viewBox="0 0 900 400" 
+          <motion.svg
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full mt-[100px]"
+            fill="none"
+            viewBox="0 0 900 400"
             xmlns="http://www.w3.org/2000/svg"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <motion.ellipse 
-              cx="450" 
-              cy="280" 
-              rx="380" 
-              ry="80" 
-              stroke="#6b46c1" 
-              strokeOpacity="0.3" 
+            <motion.ellipse
+              cx="450"
+              cy="280"
+              rx="380"
+              ry="80"
+              stroke="#6b46c1"
+              strokeOpacity="0.3"
               strokeWidth="1"
               animate={{
                 strokeOpacity: [0.2, 0.5, 0.2],
@@ -483,13 +459,13 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
                 ease: "easeInOut"
               }}
             />
-            <motion.ellipse 
-              cx="450" 
-              cy="280" 
-              rx="320" 
-              ry="70" 
-              stroke="#6b46c1" 
-              strokeOpacity="0.3" 
+            <motion.ellipse
+              cx="450"
+              cy="280"
+              rx="320"
+              ry="70"
+              stroke="#6b46c1"
+              strokeOpacity="0.3"
               strokeWidth="1"
               animate={{
                 strokeOpacity: [0.3, 0.6, 0.3],
@@ -502,13 +478,13 @@ export default function SkillsSection({ theme }: SkillsSectionProps) {
                 delay: 0.5
               }}
             />
-            <motion.ellipse 
-              cx="450" 
-              cy="280" 
-              rx="260" 
-              ry="60" 
-              stroke="#6b46c1" 
-              strokeOpacity="0.3" 
+            <motion.ellipse
+              cx="450"
+              cy="280"
+              rx="260"
+              ry="60"
+              stroke="#6b46c1"
+              strokeOpacity="0.3"
               strokeWidth="1"
               animate={{
                 strokeOpacity: [0.4, 0.7, 0.4],

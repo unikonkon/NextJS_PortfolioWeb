@@ -1,10 +1,10 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function ExperienceSection() {
   // Animation variants for staggered children
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -15,19 +15,19 @@ export default function ExperienceSection() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: [0.6, 0.05, 0.01, 0.9]
       }
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 50,
@@ -39,7 +39,7 @@ export default function ExperienceSection() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: [0.6, 0.05, 0.01, 0.9]
       }
     },
     hover: {
@@ -47,7 +47,7 @@ export default function ExperienceSection() {
       scale: 1.02,
       transition: {
         duration: 0.3,
-        ease: "easeInOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -57,7 +57,7 @@ export default function ExperienceSection() {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: [0.25, 0.46, 0.45, 0.94]
     }
   };
 
@@ -287,7 +287,7 @@ export default function ExperienceSection() {
                 transition: {
                   duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: [0.25, 0.46, 0.45, 0.94]
                 }
               }}
             >

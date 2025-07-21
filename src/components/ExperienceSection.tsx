@@ -22,7 +22,7 @@ export default function ExperienceSection() {
       x: 0,
       transition: {
         duration: 0.5,
-        ease: [0.6, 0.05, 0.01, 0.9]
+        ease: "easeOut"
       }
     }
   };
@@ -39,7 +39,7 @@ export default function ExperienceSection() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.6, 0.05, 0.01, 0.9]
+        ease: "easeOut"
       }
     },
     hover: {
@@ -47,7 +47,7 @@ export default function ExperienceSection() {
       scale: 1.02,
       transition: {
         duration: 0.3,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: "easeInOut"
       }
     }
   };
@@ -57,7 +57,7 @@ export default function ExperienceSection() {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: "easeInOut"
     }
   };
 
@@ -220,7 +220,7 @@ export default function ExperienceSection() {
               whileInView="visible"
               whileHover="hover"
               viewport={{ once: true, amount: 0.3 }}
-              animate={floatingAnimation}
+              animate={floatingAnimation as any}
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -287,7 +287,7 @@ export default function ExperienceSection() {
                 transition: {
                   duration: 4,
                   repeat: Infinity,
-                  ease: [0.25, 0.46, 0.45, 0.94]
+                  ease: "easeInOut"
                 }
               }}
             >
